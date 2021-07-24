@@ -11,6 +11,7 @@ import React, { useEffect } from 'react';
 import { LogBox, SafeAreaView, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import AppNavigation from './src/navigation/AppNavigation';
+import { Colors } from './src/styles';
 
 const App = () => {
   LogBox.ignoreAllLogs(true);
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <SafeAreaView />
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
       <AppNavigation />
     </NativeBaseProvider>
   );

@@ -1,1 +1,3 @@
-export const Images = {};
+export const Images = {
+  loginBackground: require('./loginBackground.png'),
+};
