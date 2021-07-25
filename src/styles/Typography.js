@@ -14,6 +14,14 @@ const Typography = {
     fontFamily: Fonts.type.poppinsRegular,
     fontSize: moderateScale(14),
   },
+  _38SemiBold: {
+    fontFamily: Fonts.type.poppinsSemiBold,
+    fontSize: moderateScale(38),
+  },
+  _12Medium: {
+    fontFamily: Fonts.type.poppinsMedium,
+    fontSize: moderateScale(12),
+  },
 };
 
 export default Typography;

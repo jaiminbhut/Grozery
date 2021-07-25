@@ -7,6 +7,10 @@ const strings = new LocalizedStrings({
     continueWithGoogle: 'Continue with Google',
     continueWithFacebook: 'Continue with Facebook',
     orContinueWithSocialMedia: 'Or continue with social media',
+    welcomeToOurStore: 'Welcome\n to our store',
+    getYourGroceriesAsFastAsOneHours:
+      'Get your groceries in as fast as one hours',
+    getStart: 'Get Start',
   },
 });
 

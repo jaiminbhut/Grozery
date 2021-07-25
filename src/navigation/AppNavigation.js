@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import LoginScreen from '../screens/Login';
+import OnboardingScreen from '../screens/Onboarding';
 import { Colors } from '../styles';
 import { navigationRef } from './NavigationRef';
 import NavigationRoutes from './NavigationRoutes';
@@ -22,6 +23,11 @@ const AuthStack = () => {
     <RootStack.Navigator screenOptions={stackScreenOptions}>
       <RootStack.Screen
         options={{ headerShown: false }}
+        name={NavigationRoutes.Onboarding}
+        component={OnboardingScreen}
+      />
+      <RootStack.Screen
+        options={{ headerShown: false }}
         name={NavigationRoutes.Login}
         component={LoginScreen}
       />
@@ -34,7 +40,7 @@ const AppNavigation = () => {
     <NavigationContainer ref={navigationRef}>
       <RootStack.Navigator
         screenOptions={stackScreenOptions}
-        initialRouteName={NavigationRoutes.Login}>
+        initialRouteName={NavigationRoutes.Onboarding}>
         <RootStack.Screen
           options={{ headerShown: false }}
           name={NavigationRoutes.AuthStack}
