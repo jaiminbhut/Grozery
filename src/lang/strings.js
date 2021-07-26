@@ -11,6 +11,12 @@ const strings = new LocalizedStrings({
     getYourGroceriesAsFastAsOneHours:
       'Get your groceries in as fast as one hours',
     getStart: 'Get Start',
+    enterYourMobileNumber: 'Enter your mobile number',
+    mobileNumber: 'Mobile Number',
+    emptyMobileNumber: 'Mobile number can not be empty',
+    mobileNumberPlaceHolder: '9876543210',
+    mobileNumberMustBe10Characters:
+      'Mobile number must be at least 10 characters',
   },
 });
 

@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import LoginScreen from '../screens/Login';
+import MobileNumberScreen from '../screens/MobileNumber';
 import OnboardingScreen from '../screens/Onboarding';
 import { Colors } from '../styles';
 import { navigationRef } from './NavigationRef';
@@ -30,6 +31,11 @@ const AuthStack = () => {
         options={{ headerShown: false }}
         name={NavigationRoutes.Login}
         component={LoginScreen}
+      />
+      <RootStack.Screen
+        options={{ headerShown: false }}
+        name={NavigationRoutes.MobileNumber}
+        component={MobileNumberScreen}
       />
     </RootStack.Navigator>
   );

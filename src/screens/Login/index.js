@@ -5,6 +5,8 @@ import CustomButton from '../../components/CustomButton';
 import CustomScrollView from '../../components/CustomScrollView';
 import { Keys } from '../../constants';
 import strings from '../../lang/strings';
+import { navigate } from '../../navigation/NavigationRef';
+import NavigationRoutes from '../../navigation/NavigationRoutes';
 import styles from './style';
 
 const TopImageView = () => {
@@ -64,7 +66,7 @@ const ContinueWithFacebookView = () => {
 
 const handleButtonAction = (type) => {
   if (type === Keys.loginType.mobile) {
-    //TODO
+    navigate(NavigationRoutes.MobileNumber);
   } else if (type === Keys.loginType.google) {
     //TODO
   } else if (type === Keys.loginType.facebook) {

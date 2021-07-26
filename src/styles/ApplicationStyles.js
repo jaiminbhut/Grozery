@@ -1,6 +1,7 @@
 // This file is for a reusable grouping of Theme items.
 
 import Colors from './Colors';
+import { horizontalScale, scale, verticalScale } from './Metrics';
 
 const ApplicationStyles = {
   screen: {
@@ -23,7 +24,23 @@ const ApplicationStyles = {
       right: 0,
     },
   },
-  form: {},
+  form: {
+    textInput: {
+      width: '100%',
+      paddingHorizontal: scale(25),
+      textAlignVertical: 'center',
+      backgroundColor: Colors.white,
+    },
+    formContainer: {
+      alignItems: 'center',
+      padding: scale(10),
+    },
+    formInputs: {
+      marginTop: verticalScale(10),
+      marginHorizontal: horizontalScale(20),
+      alignItems: 'center',
+    },
+  },
 };
 
 export default ApplicationStyles;

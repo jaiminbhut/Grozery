@@ -22,6 +22,14 @@ const Typography = {
     fontFamily: Fonts.type.poppinsMedium,
     fontSize: moderateScale(12),
   },
+  _24Medium: {
+    fontFamily: Fonts.type.poppinsMedium,
+    fontSize: moderateScale(24),
+  },
+  _16Regular: {
+    fontFamily: Fonts.type.poppinsRegular,
+    fontSize: moderateScale(16),
+  },
 };
 
 export default Typography;
