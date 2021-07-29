@@ -68,9 +68,13 @@ const handleButtonAction = (type) => {
   if (type === Keys.loginType.mobile) {
     navigate(NavigationRoutes.MobileNumber);
   } else if (type === Keys.loginType.google) {
-    //TODO
+    navigate(NavigationRoutes.Verification, {
+      mobileNumberOrEmail: strings.emailPlaceHolder,
+    });
   } else if (type === Keys.loginType.facebook) {
-    //TODO
+    navigate(NavigationRoutes.Verification, {
+      mobileNumberOrEmail: strings.emailPlaceHolder,
+    });
   }
 };
 

@@ -4,25 +4,25 @@ import React, { createRef } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import { BackButton, CustomTextInput, NextButton } from '../../components';
 import strings from '../../lang/strings';
-import { navigate } from '../../navigation/NavigationRef';
-import NavigationRoutes from '../../navigation/NavigationRoutes';
 import schema from '../../services/ValidationService';
-import useMobileNumber from './hooks/useMobileNumber';
+import useVerification from './hooks/useVerification';
 import styles from './style';
 
 const inputRef = {
-  mobileNumber: createRef(),
+  otp: createRef(),
 };
 
-const TitleView = () => {
+const TitleView = ({ mobileNumberOrEmail }) => {
   return (
     <>
-      <Text style={styles.titleView}>{strings.enterYourMobileNumber}</Text>
+      <Text style={styles.titleView}>
+        {strings.enter4DigitOtpSendTo + ': ' + mobileNumberOrEmail}
+      </Text>
     </>
   );
 };
 
-const MobileNumberInputView = ({
+const OTPInputView = ({
   handleChange,
   handleBlur,
   errors,
@@ -31,30 +31,30 @@ const MobileNumberInputView = ({
   handleSubmit,
 }) => (
   <CustomTextInput
-    ref={inputRef.mobileNumber}
+    ref={inputRef.otp}
     style={styles.textInput}
-    title={strings.mobileNumber}
+    title={strings.otp}
     titleStyle={styles.textInputTitle}
-    value={values.mobileNumber}
-    placeholder={strings.mobileNumberPlaceHolder}
-    maxLength={10}
+    value={values.otp}
+    placeholder={strings.otpPlaceHolder}
+    maxLength={4}
     returnKeyType={'done'}
     keyboardType="number-pad"
-    error={touched.mobileNumber && errors.mobileNumber}
-    onBlur={handleBlur('mobileNumber')}
-    onChangeText={handleChange('mobileNumber')}
+    error={touched.otp && errors.otp}
+    onBlur={handleBlur('otp')}
+    onChangeText={handleChange('otp')}
     onSubmitEditing={handleSubmit}
   />
 );
 
-const RenderForm = ({ mobileNumber, submit }) => {
+const RenderForm = ({ otp, submit }) => {
   return (
     <Formik
       enableReinitialize
       initialValues={{
-        mobileNumber: mobileNumber,
+        otp: otp,
       }}
-      validationSchema={schema.mobileNumber}
+      validationSchema={schema.verification}
       onSubmit={(values) => submit(values)}>
       {({ ...params }) => RenderFormInputs(params)}
     </Formik>
@@ -63,39 +63,48 @@ const RenderForm = ({ mobileNumber, submit }) => {
 
 const RenderFormInputs = (params) => (
   <View style={styles.formInputs}>
-    <MobileNumberInputView {...params} />
+    <OTPInputView {...params} />
   </View>
 );
 
-const NextButtonView = ({ mobileNumber }) => {
+const ResendOtpView = () => {
+  return <Text style={styles.resendOtpText}>{strings.resendOtp}</Text>;
+};
+
+const NextButtonView = ({ otp }) => {
   return (
     <View style={styles.buttonView}>
-      <NextButton onPress={() => handleNextButtonAction(mobileNumber)} />
+      <ResendOtpView />
+      <NextButton onPress={() => handleNextButtonAction(otp)} />
     </View>
   );
 };
 
-const handleNextButtonAction = (mobileNumber) => {
-  navigate(NavigationRoutes.Verification, {
-    mobileNumberOrEmail: mobileNumber,
-  });
+const handleNextButtonAction = (otp) => {
+  //TODO
 };
 
-const MobileNumberScreen = () => {
-  const { getter, setter } = useMobileNumber();
+const VerificationScreen = () => {
+  const { getter, setter } = useVerification();
 
   return (
     <View style={styles.container}>
       <SafeAreaView />
       <BackButton />
-      <TitleView />
+      <TitleView {...getter} />
       <RenderForm {...getter} {...setter} />
       <NextButtonView {...getter} />
     </View>
   );
 };
 
-MobileNumberInputView.propTypes = {
+TitleView.propTypes = {
+  mobileNumberOrEmail: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+};
+OTPInputView.propTypes = {
   handleChange: PropTypes.func,
   handleBlur: PropTypes.func,
   errors: PropTypes.object,
@@ -104,11 +113,11 @@ MobileNumberInputView.propTypes = {
   handleSubmit: PropTypes.func,
 };
 RenderForm.propTypes = {
-  mobileNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  otp: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   submit: PropTypes.func,
 };
 NextButtonView.propTypes = {
-  mobileNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  otp: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-export default MobileNumberScreen;
+export default VerificationScreen;

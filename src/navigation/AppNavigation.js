@@ -4,6 +4,7 @@ import React from 'react';
 import LoginScreen from '../screens/Login';
 import MobileNumberScreen from '../screens/MobileNumber';
 import OnboardingScreen from '../screens/Onboarding';
+import VerificationScreen from '../screens/Verification';
 import { Colors } from '../styles';
 import { navigationRef } from './NavigationRef';
 import NavigationRoutes from './NavigationRoutes';
@@ -36,6 +37,11 @@ const AuthStack = () => {
         options={{ headerShown: false }}
         name={NavigationRoutes.MobileNumber}
         component={MobileNumberScreen}
+      />
+      <RootStack.Screen
+        options={{ headerShown: false }}
+        name={NavigationRoutes.Verification}
+        component={VerificationScreen}
       />
     </RootStack.Navigator>
   );

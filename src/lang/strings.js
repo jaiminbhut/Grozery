@@ -17,6 +17,13 @@ const strings = new LocalizedStrings({
     mobileNumberPlaceHolder: '9876543210',
     mobileNumberMustBe10Characters:
       'Mobile number must be at least 10 characters',
+    enter4DigitOtpSendTo: 'Enter 4-digit otp send to',
+    otp: 'Otp',
+    emptyOtp: 'Otp can not be empty',
+    otpMustBe4Digit: 'Otp must be 4 digit',
+    resendOtp: 'Resend Otp',
+    emailPlaceHolder: 'grozary@react.com',
+    otpPlaceHolder: 'Enter otp',
   },
 });
 
