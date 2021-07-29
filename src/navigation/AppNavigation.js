@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import LocationSelectionScreen from '../screens/LocationSelection';
 import LoginScreen from '../screens/Login';
 import MobileNumberScreen from '../screens/MobileNumber';
 import OnboardingScreen from '../screens/Onboarding';
@@ -42,6 +43,11 @@ const AuthStack = () => {
         options={{ headerShown: false }}
         name={NavigationRoutes.Verification}
         component={VerificationScreen}
+      />
+      <RootStack.Screen
+        options={{ headerShown: false }}
+        name={NavigationRoutes.LocationSelection}
+        component={LocationSelectionScreen}
       />
     </RootStack.Navigator>
   );

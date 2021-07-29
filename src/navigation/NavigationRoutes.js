@@ -4,6 +4,7 @@ const NavigationRoutes = {
   Onboarding: 'Onboarding',
   MobileNumber: 'MobileNumber',
   Verification: 'Verification',
+  LocationSelection: 'LocationSelection',
 };
 
 export default NavigationRoutes;

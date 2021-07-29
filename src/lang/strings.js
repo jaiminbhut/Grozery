@@ -24,6 +24,9 @@ const strings = new LocalizedStrings({
     resendOtp: 'Resend Otp',
     emailPlaceHolder: 'grozary@react.com',
     otpPlaceHolder: 'Enter otp',
+    selectYourLocation: 'Select your location',
+    selectLocationForGetUpdatesOfNearestStore:
+      'Select location for get updates of nearest store',
   },
 });
 

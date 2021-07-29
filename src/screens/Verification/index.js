@@ -4,6 +4,8 @@ import React, { createRef } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import { BackButton, CustomTextInput, NextButton } from '../../components';
 import strings from '../../lang/strings';
+import { navigate } from '../../navigation/NavigationRef';
+import NavigationRoutes from '../../navigation/NavigationRoutes';
 import schema from '../../services/ValidationService';
 import useVerification from './hooks/useVerification';
 import styles from './style';
@@ -81,7 +83,7 @@ const NextButtonView = ({ otp }) => {
 };
 
 const handleNextButtonAction = (otp) => {
-  //TODO
+  navigate(NavigationRoutes.LocationSelection);
 };
 
 const VerificationScreen = () => {
