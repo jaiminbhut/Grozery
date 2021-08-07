@@ -17,6 +17,6 @@ const CustomScrollView = ({ children, containerStyle }) => {
 export default CustomScrollView;
 
 CustomScrollView.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   containerStyle: PropTypes.object,
 };

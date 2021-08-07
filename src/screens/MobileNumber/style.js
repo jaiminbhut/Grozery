@@ -4,6 +4,7 @@ import {
   horizontalScale,
   Metrics,
   Typography,
+  verticalScale,
 } from '../../styles';
 
 const styles = StyleSheet.create({
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleView: {
-    marginTop: Metrics.navBarHeight,
+    marginTop: verticalScale(20),
     ...Typography._24Medium,
     marginHorizontal: horizontalScale(20),
   },

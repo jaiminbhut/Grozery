@@ -4,8 +4,7 @@ import { Colors, horizontalScale, verticalScale } from '../../styles';
 const styles = StyleSheet.create({
   container: {
     padding: verticalScale(25),
-    top: verticalScale(30),
-    position: 'absolute',
+    alignSelf: 'baseline',
   },
   backIcon: {
     width: horizontalScale(10),
