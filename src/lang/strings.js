@@ -27,6 +27,17 @@ const strings = new LocalizedStrings({
     selectYourLocation: 'Select your location',
     selectLocationForGetUpdatesOfNearestStore:
       'Select location for get updates of nearest store',
+    yourState: 'Your State',
+    yourCity: 'Your City',
+    yourArea: 'Your Area',
+    statePlaceHolder: 'Select state',
+    cityPlaceHolder: 'Select city',
+    areaPlaceHolder: 'Select area',
+    submit: 'Submit',
+    search: 'Search',
+    enterName: 'Enter {0} name',
+    belowAreTheResultsOfYourSearch: 'Below are the results of your search',
+    noSearchResultFound: 'No search result found',
   },
 });
 

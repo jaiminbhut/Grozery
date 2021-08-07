@@ -1,8 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import NetInfo from '@react-native-community/netinfo';
 import Color from 'color';
 import { Toast } from 'native-base';
-import { ErrorConsts } from '../constants';
 import { navigate, reset } from '../navigation/NavigationRef';
 import NavigationRoutes from '../navigation/NavigationRoutes';
 import { Colors } from '../styles';
@@ -13,18 +11,6 @@ export function isNull(data) {
   } else {
     false;
   }
-}
-
-export function checkNetwork() {
-  NetInfo.fetch().then((state) => {
-    if (state.isConnected) {
-      return true;
-    } else {
-      showToast(ErrorConsts.networkError);
-
-      return false;
-    }
-  });
 }
 
 export const showToast = (message) => {

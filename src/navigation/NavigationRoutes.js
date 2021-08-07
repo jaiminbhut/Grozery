@@ -5,6 +5,7 @@ const NavigationRoutes = {
   MobileNumber: 'MobileNumber',
   Verification: 'Verification',
   LocationSelection: 'LocationSelection',
+  Search: 'Search',
 };
 
 export default NavigationRoutes;

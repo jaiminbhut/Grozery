@@ -12,6 +12,9 @@ const schema = {
       .required(strings.emptyOtp)
       .min(4, strings.otpMustBe4Digit),
   }),
+  search: Yup.object({
+    search: Yup.string(),
+  }),
 };
 
 export default schema;

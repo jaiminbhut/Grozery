@@ -5,6 +5,7 @@ import LocationSelectionScreen from '../screens/LocationSelection';
 import LoginScreen from '../screens/Login';
 import MobileNumberScreen from '../screens/MobileNumber';
 import OnboardingScreen from '../screens/Onboarding';
+import SearchScreen from '../screens/Search';
 import VerificationScreen from '../screens/Verification';
 import { Colors } from '../styles';
 import { navigationRef } from './NavigationRef';
@@ -48,6 +49,11 @@ const AuthStack = () => {
         options={{ headerShown: false }}
         name={NavigationRoutes.LocationSelection}
         component={LocationSelectionScreen}
+      />
+      <RootStack.Screen
+        options={{ headerShown: false }}
+        name={NavigationRoutes.Search}
+        component={SearchScreen}
       />
     </RootStack.Navigator>
   );

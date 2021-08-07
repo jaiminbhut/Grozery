@@ -8,7 +8,7 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
   },
   location: {
     width: horizontalScale(225),
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1.32,
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop: verticalScale(50),
+    marginTop: verticalScale(20),
   },
   titleView: {
     marginTop: verticalScale(20),
@@ -31,6 +31,14 @@ const styles = StyleSheet.create({
     color: Colors.darkGray,
     marginHorizontal: horizontalScale(40),
     alignSelf: 'center',
+  },
+  stateView: {
+    marginHorizontal: horizontalScale(30),
+    marginTop: verticalScale(10),
+  },
+  submitButton: {
+    marginTop: verticalScale(40),
+    marginHorizontal: horizontalScale(30),
   },
 });
 
